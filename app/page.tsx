@@ -1,14 +1,3 @@
-// import {ModeToggle} from "@/components/mode-toggle";
-// export default function Home() {
-//   return (
-//     <div>
-//       哈哈
-//       <ModeToggle />
-//     </div>
-//   );
-// }
-
-import {ModeToggle} from "@/components/mode-toggle";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Home() {

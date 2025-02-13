@@ -20,14 +20,15 @@ export default function Navbar() {
         </Link>
 
         {/* PC 端导航 */}
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden md:flex space-x-6 items-center">
           <Link href="/about" className="hover:text-blue-600">关于</Link>
           <Link href="/services" className="hover:text-blue-600">服务</Link>
           <Link href="/contact" className="hover:text-blue-600">联系</Link>
+          {/* 主题切换按钮 */}
+          <ModeToggle />
         </div>
 
-        {/* 主题切换按钮 */}
-        <ModeToggle />
+
 
         {/* 移动端菜单按钮 */}
         <Button variant="ghost" className="md:hidden" onClick={() => setIsOpen(!isOpen)}>

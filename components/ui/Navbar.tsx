@@ -29,11 +29,15 @@ export default function Navbar() {
         </div>
 
 
+        <div className="md:hidden flex items-center">
+          {/* 移动端菜单按钮 */}
+          <Button variant="ghost" className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X /> : <Menu />}
+          </Button>
+          {/* 主题切换按钮 */}
+          <ModeToggle />
+        </div>
 
-        {/* 移动端菜单按钮 */}
-        <Button variant="ghost" className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X /> : <Menu />}
-        </Button>
       </div>
 
       {/* 移动端菜单 */}

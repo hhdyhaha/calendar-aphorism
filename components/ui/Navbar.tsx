@@ -17,7 +17,7 @@ export default function Navbar() {
   const { theme } = useTheme();
 
   return (
-    <nav className={`px-6 py-4 shadow-md transition-colors ${theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-black"}`}>
+    <nav className={`px-6 py-4 shadow-md transition-colors ${theme === "dark" || theme === "system" ? "bg-gray-900 text-white" : "bg-white text-black"}`}>
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="text-xl font-bold">

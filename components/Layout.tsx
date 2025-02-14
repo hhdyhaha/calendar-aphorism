@@ -1,7 +1,6 @@
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import { ReactNode } from "react";
-import { ThemeProvider } from "@/components/theme-provider"
 
 interface LayoutProps {
     children: ReactNode;

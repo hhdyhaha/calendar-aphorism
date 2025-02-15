@@ -21,7 +21,7 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="text-xl font-bold">
-          MySite
+          每一天儿
         </Link>
 
         {/* PC 端导航 */}

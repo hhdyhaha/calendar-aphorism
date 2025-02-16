@@ -1,17 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { Menu } from "lucide-react";
+// import { Menu } from "lucide-react";
 import { useTheme } from "next-themes";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+// import {
+//   DropdownMenu,
+//   DropdownMenuContent,
+//   DropdownMenuItem,
+//   DropdownMenuSeparator,
+//   DropdownMenuTrigger,
+// } from "@/components/ui/dropdown-menu"
+import { SidebarTrigger } from "@/components/ui/sidebar"
+
 
 export default function Navbar() {
   const { resolvedTheme } = useTheme();
@@ -19,22 +21,24 @@ export default function Navbar() {
   return (
     <nav className={`px-6 py-4 shadow-md transition-colors ${resolvedTheme === "dark" ? "bg-gray-900 text-white" : "bg-white text-black"}`}>
       <div className="container mx-auto flex items-center justify-between">
+
         {/* Logo */}
         <Link href="/" className="text-xl font-bold">
+          <SidebarTrigger />
           每一天儿
         </Link>
 
         {/* PC 端导航 */}
         <div className="hidden md:flex space-x-6 items-center">
-          <Link href="/about" className="hover:text-blue-600">关于</Link>
+          {/* <Link href="/about" className="hover:text-blue-600">关于</Link>
           <Link href="/services" className="hover:text-blue-600">服务</Link>
-          <Link href="/contact" className="hover:text-blue-600">联系</Link>
+          <Link href="/contact" className="hover:text-blue-600">联系</Link> */}
           <ModeToggle />
         </div>
 
         {/* 移动端菜单 */}
         <div className="md:hidden flex items-center gap-2">
-          <DropdownMenu>
+          {/* <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu className="h-5 w-5" />
@@ -52,7 +56,7 @@ export default function Navbar() {
               </DropdownMenuItem>
               <DropdownMenuSeparator />
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
           <ModeToggle />
         </div>
       </div>

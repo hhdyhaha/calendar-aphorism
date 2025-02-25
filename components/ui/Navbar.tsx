@@ -1,22 +1,22 @@
 "use client";
 
 import Link from "next/link";
-// import { Menu } from "lucide-react";
 import { useTheme } from "next-themes";
-// import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
-// import {
-//   DropdownMenu,
-//   DropdownMenuContent,
-//   DropdownMenuItem,
-//   DropdownMenuSeparator,
-//   DropdownMenuTrigger,
-// } from "@/components/ui/dropdown-menu"
 import { SidebarTrigger } from "@/components/ui/sidebar"
-
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const { resolvedTheme } = useTheme();
+  const [currentDate, setCurrentDate] = useState("");
+
+  useEffect(() => {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    setCurrentDate(`${year}年${month}月${day}日`);
+  }, []);
 
   return (
     <nav className={`px-6 py-4 shadow-md transition-colors ${resolvedTheme === "dark" ? "bg-gray-900 text-white" : "bg-white text-black"}`}>
@@ -25,7 +25,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="text-xl font-bold">
           <SidebarTrigger />
-          每一天儿
+          {currentDate}
         </Link>
 
         {/* PC 端导航 */}

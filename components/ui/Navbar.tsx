@@ -33,7 +33,7 @@ export default function Navbar() {
           {/* <Link href="/about" className="hover:text-blue-600">关于</Link>
           <Link href="/services" className="hover:text-blue-600">服务</Link>
           <Link href="/contact" className="hover:text-blue-600">联系</Link> */}
-          <ModeToggle />
+          {/* <ModeToggle /> */}
         </div>
 
         {/* 移动端菜单 */}
@@ -57,7 +57,7 @@ export default function Navbar() {
               <DropdownMenuSeparator />
             </DropdownMenuContent>
           </DropdownMenu> */}
-          <ModeToggle />
+          {/* <ModeToggle /> */}
         </div>
       </div>
     </nav>

@@ -11,11 +11,13 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
     return (
         <SidebarProvider>
-            <AppSidebar />
-            <div className="flex flex-col min-h-screen w-full">
-                <Navbar />
-                <main className="flex-grow">{children}</main>
-                <Footer />
+            <div className="flex h-screen">
+                <AppSidebar />
+                <div className="flex flex-col flex-1 overflow-auto">
+                    <Navbar />
+                    <main className="flex-1 overflow-auto p-4">{children}</main>
+                    <Footer />
+                </div>
             </div>
         </SidebarProvider>
     );

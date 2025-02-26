@@ -3,13 +3,15 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
 import Layout from "@/components/Layout";
+import { AntdRegistry } from '@ant-design/nextjs-registry';
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
+const geistMono = Geist_Mono({ 
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
@@ -36,7 +38,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Layout>
+          <AntdRegistry>
             {children}
+            </AntdRegistry>
           </Layout>
         </ThemeProvider>
       </body>

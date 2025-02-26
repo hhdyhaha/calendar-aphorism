@@ -12,7 +12,7 @@ export default function Layout({ children }: LayoutProps) {
     return (
         <SidebarProvider>
             <AppSidebar />
-            <div className="flex flex-col min-h-screen w-full">
+            <div className="flex flex-col">
                 <Navbar />
                 <main className="flex-grow">{children}</main>
                 <Footer />

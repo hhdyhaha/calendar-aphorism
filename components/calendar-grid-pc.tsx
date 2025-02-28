@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 const CalendarGrid: React.FC = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -7,11 +7,7 @@ const CalendarGrid: React.FC = () => {
   
   const weekdays = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
   
-  useEffect(() => {
-    generateCalendarDays();
-  }, [currentDate]);
-  
-  const generateCalendarDays = () => {
+  const generateCalendarDays = useCallback(() => {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
     
@@ -48,7 +44,13 @@ const CalendarGrid: React.FC = () => {
     }
     
     setDaysInMonth(days);
-  };
+  }, [currentDate]);
+
+  useEffect(() => {
+    generateCalendarDays();
+  }, [currentDate,generateCalendarDays]);
+  
+
   
   const changeMonth = (delta: number) => {
     const newDate = new Date(currentDate);

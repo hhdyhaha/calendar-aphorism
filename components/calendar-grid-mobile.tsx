@@ -1,17 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 const CalendarGrid: React.FC = () => {
-  const [currentDate, setCurrentDate] = useState(new Date());
-  const [daysInMonth, setDaysInMonth] = useState<Date[]>([]);
-  const [hoveredDate, setHoveredDate] = useState<Date | null>(null);
+  const [currentDate] = useState(new Date());
+  // const [daysInMonth, setDaysInMonth] = useState<Date[]>([]);
+  // const [hoveredDate, setHoveredDate] = useState<Date | null>(null);
   
-  const weekdays = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
-  
-  useEffect(() => {
-    generateCalendarDays();
-  }, [currentDate]);
-  
-  const generateCalendarDays = () => {
+  // const weekdays = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+  const generateCalendarDays = useCallback( () => {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
     
@@ -47,25 +42,30 @@ const CalendarGrid: React.FC = () => {
       days.push(new Date(year, month + 1, i));
     }
     
-    setDaysInMonth(days);
-  };
+    // setDaysInMonth(days);
+  },[currentDate]);
+  useEffect(() => {
+    generateCalendarDays();
+  }, [currentDate,generateCalendarDays]);
   
-  const changeMonth = (delta: number) => {
-    const newDate = new Date(currentDate);
-    newDate.setMonth(newDate.getMonth() + delta);
-    setCurrentDate(newDate);
-  };
+
   
-  const isCurrentMonth = (date: Date) => {
-    return date.getMonth() === currentDate.getMonth();
-  };
+  // const changeMonth = (delta: number) => {
+  //   const newDate = new Date(currentDate);
+  //   newDate.setMonth(newDate.getMonth() + delta);
+  //   setCurrentDate(newDate);
+  // };
   
-  const isToday = (date: Date) => {
-    const today = new Date();
-    return date.getDate() === today.getDate() && 
-           date.getMonth() === today.getMonth() && 
-           date.getFullYear() === today.getFullYear();
-  };
+  // const isCurrentMonth = (date: Date) => {
+  //   return date.getMonth() === currentDate.getMonth();
+  // };
+  
+  // const isToday = (date: Date) => {
+  //   const today = new Date();
+  //   return date.getDate() === today.getDate() && 
+  //          date.getMonth() === today.getMonth() && 
+  //          date.getFullYear() === today.getFullYear();
+  // };
 
   return (
     <div>

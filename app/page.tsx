@@ -1,7 +1,7 @@
 'use client';
 import React from "react";
 import { Calendar } from "@/components/ui/calendar"
-import CalendarGrid from "@/components/calendar-grid";
+import CalendarGridPC from "@/components/calendar-grid-pc";
 
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <div className="w-full h-full flex items-center justify-center">
-      <CalendarGrid />
+      <CalendarGridPC />
     </div>
   );
 }

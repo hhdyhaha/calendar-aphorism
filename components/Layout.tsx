@@ -15,7 +15,7 @@ export default function Layout({ children }: LayoutProps) {
             <div className="w-full h-full flex flex-col min-h-screen">
                 <Navbar />
                 <main className="flex-grow">{children}</main>
-                <Footer />
+                {/* <Footer /> */}
             </div>      
         </SidebarProvider>
     );

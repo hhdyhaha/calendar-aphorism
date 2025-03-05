@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 import CalendarGridPC from "@/components/calendar-grid-pc";
 import CalendarGridMobile from "@/components/calendar-grid-mobile";
+import { AppSidebar } from "@/components/app-sidebar";
 
 export default function Home() {
   const [isMobileView, setIsMobileView] = useState<boolean>(isMobile); // 初始判断

@@ -1,5 +1,4 @@
 import Navbar from "@/components/ui/Navbar";
-import Footer from "@/components/ui/Footer";
 import { ReactNode } from "react";
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/app-sidebar"

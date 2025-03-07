@@ -62,7 +62,7 @@ export function AppSidebar() {
             </div>
             
             <div className="quote-display p-3 rounded-lg bg-blue-50 border border-blue-200">
-              <p className="text-sm italic text-blue-600">"{randomQuote}"</p>
+              <p className="text-sm italic text-blue-600">&quot;{randomQuote}&quot;</p>
             </div>
           </SidebarGroup>
         </SidebarContent>
